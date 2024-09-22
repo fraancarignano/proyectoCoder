@@ -1,53 +1,131 @@
-*{
-    background-color: white;
+// Variables
+$primary-bg-color: #555555;
+$secondary-bg-color: #f1f1f1;
+$text-color-white: white;
+$font-family: 'Arial, sans-serif';
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 1.5rem;
+$gap-small: 10px;
+$gap-medium: 20px;
+$padding-small: 10px;
+$padding-medium: 20px;
+$padding-large: 50px;
+$border-color: #ddd;
+$button-bg-color: #555555;
+$button-hover-bg-color: #333333;
+$form-border-color: #ccc;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-#header{
-    width: 100%;
-    height: 70%;
-    background-color: grey;
+body {
+  font-family: $font-family;
+  line-height: 1.6;
 }
 
-#navBar{
-    width: 100%;
-    height: 70%;
-    background-color: grey;
+// Header 
+header {
+  background-color: $primary-bg-color;
+  padding: $padding-small $padding-medium;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .nav-items {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    gap: $gap-medium;
 
+    a {
+      color: $text-color-white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: $font-size-small;
+    }
+  }
 
-ul,li{
-    justify-content: flex-end;
-    background-color: grey;
-    margin-left: auto;
-    margin-right: 15px;
-    
-    
-    
-    
-    
-    
-    display: inline-block;
-}
-
-h1{
-    background-color: grey;
-    margin: 0;
-    margin-right: 20px;
-   
-    
-    
-}
-.logo{
-    width: 100px;
-    height: 100px;
+  &.contacto-nav {
     justify-content: center;
-    
+  }
 }
 
-img{
-    width: 75%;
+// Section
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-bg-color;
+  padding: $padding-large 0;
+
+  .hero-image img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+  }
 }
+
+// Contacto Section
+.contacto-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: $padding-large $padding-medium;
+  background-color: white;
+
+  .mapa img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .info-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      margin-bottom: $gap-medium;
+      font-size: $font-size-medium;
+    }
+  }
+
+  .formulario-contacto {
+    h3 {
+      margin-bottom: $gap-small;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: $padding-small;
+      border: 1px solid $form-border-color;
+      resize: none;
+      margin-bottom: $gap-small;
+    }
+
+    button {
+      padding: $padding-small $padding-medium;
+      background-color: $button-bg-color;
+      color: $text-color-white;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $button-hover-bg-color;
+      }
+    }
+  }
+}
+
+
